@@ -1,0 +1,42 @@
+using System;
+
+namespace BMI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Double Kilogram;
+            Double meter;
+            Double Result;
+
+            Console.Write("Enter your weight in kilogram: ");
+            Kilogram = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter you height in meters: ");
+            meter = Convert.ToDouble(Console.ReadLine());
+            
+            Result = Kilogram / (meter * meter);
+            Console.WriteLine("Your BMI is: {0:F2}", Result);
+            if (Result <= 24.9)
+            {
+                Console.Write("Your BMI category is: Normal weight");
+                Console.ReadLine();
+            }
+            else if (Result <= 29.9)
+            {
+                Console.Write("Your BMI category is: Overweight");
+                Console.ReadLine();
+            }
+            else if (Result < 18.5)
+            {
+                Console.Write("Your BMI category is: Underweight");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.Write("Your BMI category is: Obesity");
+            }
+            Console.ReadKey(true);
+        }
+    }
+}
